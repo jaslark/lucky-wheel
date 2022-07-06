@@ -1,0 +1,68 @@
+// Define color status;
+$white: #fff;
+$black: #000;
+$new: #3278ca;
+$preparing: #ef8d22;
+$delivering: #5abaa7;
+$completed: #7ab648;
+$submited: #bb5b3f;
+$confirmed: #ef8d22;
+$inprocess: #b4b7ff;
+$rejected: #c92d39;
+$inwarranty: #5abaa7;
+$expired: #b2b2b2;
+$canceled: #263238;
+$intransit: #ef8d22;
+$receiving: #69bdd2;
+
+.status {
+  color: $white;
+  padding: 1px 0;
+  border-radius: 2px;
+  width: 80px;
+  display: inline-block;
+  font-weight: 700;
+  &-new {
+    background: $new;
+  }
+  &-preparing {
+    background: $preparing;
+  }
+  &-delivering {
+    background: $delivering;
+  }
+  &-completed {
+    background: $completed;
+  }
+  &-submited {
+    background: $submited;
+  }
+  &-confirmed {
+    background: $confirmed;
+  }
+  &-inprocess {
+    background: $inprocess;
+  }
+  &-rejected {
+    background: $rejected;
+  }
+  &-inwarranty {
+    background: $inwarranty;
+  }
+  &-expired {
+    background: $expired;
+  }
+  &-canceled {
+    background: $canceled;
+  }
+  &-intransit {
+    background: $intransit;
+  }
+  &-receiving {
+    background: $receiving;
+  }
+  &-default {
+    background: none;
+    color: black;
+  }
+}

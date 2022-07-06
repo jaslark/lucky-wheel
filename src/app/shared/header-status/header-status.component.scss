@@ -1,0 +1,152 @@
+@import "../../../assets/scss/variable.scss";
+@import "../../../assets/scss/colors.scss";
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+.tab .nav-tabs {
+  border-bottom: 0 none;
+}
+.tab .nav-tabs li {
+  margin-right: 20px;
+  width: 150px;
+}
+.tab .nav-tabs li a {
+  position: relative;
+  padding: 15px;
+  color: $black;
+  font-size: 17px;
+  z-index: 1;
+}
+.tab .nav-tabs li a:hover {
+  background: transparent;
+  border: 1px solid transparent;
+}
+.tab .nav-tabs li a:before {
+  content: "";
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  bottom: 14px;
+  left: -1px;
+
+  border: 1px solid #d3d3d3;
+  border-bottom: 0px none;
+  border-radius: 10px 10px 0 0;
+  transform-origin: left center 0;
+  transform: perspective(4px) rotateX(2deg);
+  z-index: -1;
+  color: $black;
+}
+.tab .nav-tabs li.active a:before {
+  background: #fff;
+}
+.tab .nav-tabs li.active a,
+.tab .nav-tabs li.active a:focus,
+.tab .nav-tabs li.active a:hover {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #444;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 600;
+}
+.tab-content .tab-pane {
+  border: 1px solid #d3d3d3;
+  padding: 20px;
+  background: #fff;
+  line-height: 22px;
+}
+.tab-content .tab-pane h3 {
+  margin-top: 0;
+}
+@media only screen and (max-width: 767px) {
+  .tab .nav-tabs li a {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+  .tab .nav-tabs li a:before {
+    bottom: 6px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .tab .nav-tabs li {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .tab .nav-tabs li a:before {
+    bottom: 0;
+    transform: none;
+    border-bottom: 1px solid #d3d3d3;
+  }
+}
+
+.app-status-tab {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0.75rem 0 0;
+  margin-top: 75px;
+}
+
+.app-status-tab-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  top: -62px;
+  position: relative;
+}
+
+.app-status-tab-item {
+  display: flex;
+  box-shadow: 0px 0px 3px rgba(82, 63, 105, 0.1);
+  flex-direction: column;
+  min-width: 120px;
+  color: $white;
+  background-color: $blue-darker;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+    background-color: $blue-main;
+  }
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.7rem 0.7rem 0 0;
+  position: relative;
+  + .app-status-tab-item {
+    margin-left: 8px;
+  }
+  &.active {
+    color: $blue-darker;
+    background-color: $white;
+    &:before {
+      content: "";
+      height: 50%;
+      width: 3px;
+      background-color: $blue-darker;
+      position: absolute;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 0 3px 3px 0;
+    }
+    &:after {
+      content: "";
+      width: 8px;
+      height: 0.7rem;
+      left: 101%;
+      box-shadow: 0px 2px 1px 0px rgba(82, 63, 105, 0.1);
+      border-radius: 0 0 0 0.7rem;
+      position: absolute;
+      bottom: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.app-status-tab-item-count {
+  font-size: 1.2rem;
+  font-weight: 400;
+}

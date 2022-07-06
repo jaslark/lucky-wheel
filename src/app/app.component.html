@@ -1,0 +1,6 @@
+<router-outlet>
+  <app-spinner></app-spinner>
+  <ng-http-loader [extraDuration]="300" [minDuration]="2000" [backgroundColor]="'#ffffff'" [opacity]=".8"
+    [entryComponent]="spinner" [filteredUrlPatterns]="['login']"></ng-http-loader>
+</router-outlet>
+<app-loading-progress-bar *ngIf="(isLoading$ | async)"></app-loading-progress-bar>

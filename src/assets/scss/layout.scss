@@ -1,0 +1,933 @@
+@import "~ng-zorro-antd/menu/style/index.min.css"; /* Import styles of the component */
+@import "~ng-zorro-antd/dropdown/style/index.min.css"; /* Import styles of the component */
+@import "~ng-zorro-antd/style/index.min.css"; /* Import basic styles */
+@import "~ng-zorro-antd/drawer/style/index.min.css"; /* Import styles of the component */
+@import "~ng-zorro-antd/breadcrumb/style/index.min.css"; /* Import styles of the component */
+@import "~ng-zorro-antd/upload/style/index.min.css"; /* Import styles of the component */
+@import "~ng-zorro-antd/modal/style/index.min.css"; /* Import styles of the component */
+
+@import "~quill/dist/quill.snow.css";
+
+// @import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+app-full-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  #main-wrapper {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    overflow: auto;
+  }
+  .page-wrapper {
+    flex: 1;
+    display: flex;
+    // height: calc(100% - 58px);
+    .container-fluid {
+      background: $bg-color !important;
+    }
+  }
+  .ql-container {
+    height: inherit;
+  }
+}
+
+.app-table-scroll-wrapper {
+  max-height: 300px;
+}
+
+.anticon {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+.ant-upload.ant-upload-select-picture-card {
+  background-color: $white;
+}
+
+.btn-upload-file {
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  font-size: 12px;
+  padding: 3px;
+  margin-top: 5px;
+  background-color: $grey-lightest;
+}
+
+.page-wrapper,
+.ant-drawer,
+.ant-dropdown {
+  .tab-custom .nav-tabs .nav-item .nav-link {
+    font-weight: 300;
+    margin-bottom: 8px;
+    &:hover {
+      color: $blue-darkest;
+    }
+    &.active {
+      color: $blue-darkest;
+      font-weight: 400;
+      border-bottom: 2px solid $blue-darkest;
+    }
+  }
+  .page-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px 0 10px 0;
+    padding: 0;
+    display: block;
+    color: $text-main;
+  }
+  .ant-breadcrumb {
+    font-size: 0.75rem;
+    border-radius: 5px;
+    padding: 10px;
+    color: $blue-lighter;
+    box-shadow: $boxShadow;
+    background-color: $white;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    a:hover {
+      color: $blue-lighter;
+    }
+    a:focus {
+      color: inherit;
+    }
+  }
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .layout-view {
+    height: 100%;
+  }
+  .layout-view .card {
+    border: none;
+    border-radius: inherit;
+    height: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    .card-body {
+      // overflow: auto;
+    }
+  }
+  .app-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    background-color: $bg-color;
+  }
+  .app-scroll-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+  }
+
+  .app-left-menu {
+    flex: 0 0 200px;
+    box-shadow: $boxShadow;
+    padding: 15px;
+    padding-right: 0;
+    border-radius: 8px;
+    height: 100%;
+    background-color: $white;
+    position: relative;
+    overflow: auto;
+    .app-left-menu-group {
+      margin-top: 5px;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        font-size: 0.75rem;
+        cursor: pointer;
+        display: flex;
+        &:hover {
+          a {
+            color: $blue-darkest;
+            background-color: $grey-lighter;
+          }
+        }
+        a {
+          color: $text-main;
+          padding: 8px 15px;
+          width: 100%;
+          border-radius: 5px;
+          margin-bottom: 5px;
+          &.active {
+            color: $blue-darkest;
+            border-left: 3px solid $blue-darker;
+            border-radius: 0;
+          }
+        }
+      }
+      h6 {
+        font-size: 0.75rem;
+        color: $blue-darkest;
+        text-transform: uppercase;
+      }
+      & + .app-left-menu-group {
+        margin-top: 15px;
+      }
+    }
+  }
+  .app-right-content {
+    height: 100%;
+    flex: 1;
+    position: relative;
+    background-color: $bg-color;
+    padding-left: 8px;
+  }
+}
+
+.layout-top-menu-submenu {
+  background-color: $white;
+  min-width: 175px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .ant-menu-item,
+  .ant-menu-submenu-title {
+    font-size: 0.75rem;
+    color: $text-main;
+    white-space: inherit;
+    border: none;
+    &:hover {
+      background-color: $bg-color;
+      color: $green-lighter;
+    }
+  }
+  &.ant-menu-submenu-selected .ant-menu-submenu-title {
+    color: $text-main;
+  }
+}
+
+.container-full-height {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  .layout-wrapper {
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
+.Aqua-app,
+.ant-drawer,
+.ant-dropdown,
+.modal {
+  .page {
+    height: 100%;
+    font-size: 0.75rem;
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .ant-drawer-content .ant-drawer-header {
+    background-color: $blue-darkest;
+    .ant-drawer-title {
+      color: $grey-lighter;
+      font-weight: 400;
+    }
+  }
+  .btn {
+    &.btn-min {
+      min-width: 75px;
+    }
+    &:disabled {
+      &:hover {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .btn-search,
+  .btn-save,
+  .btn-save-close {
+    background-color: $blue-main;
+    color: $white;
+    border-color: $blue-main;
+    min-width: 75px;
+    height: 30px;
+  }
+  .btn-link {
+    color: inherit;
+  }
+
+  .btn-danger {
+    min-width: 75px;
+  }
+
+  .btn-reset,
+  .btn-back {
+    background-color: $bg-color;
+    color: $blue-darker;
+    border-color: $grey-lighter;
+    min-width: 75px;
+    height: 30px;
+    &:hover {
+      color: $blue-darker;
+    }
+  }
+  .form-control,
+  .form-control:focus,
+  .ng-select.ng-select-single .ng-select-container,
+  .ng-select.ng-select-multiple .ng-select-container {
+    background-color: $grey-lightest;
+    border-radius: 5px;
+    border-color: transparent;
+    min-height: 30px;
+    color: $text-main;
+    &:disabled {
+      background-color: $grey-lighter;
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+  .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    box-shadow: none;
+  }
+  input:checked + .slider {
+    background-color: $blue-main;
+  }
+  .form-control-view {
+    font-size: 0.75rem;
+  }
+  .form-control::placeholder {
+    color: $grey;
+  }
+  .form-control {
+    &:disabled {
+      &:hover {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+  }
+  .layout-wrapper {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    overflow: auto;
+  }
+  .list-action {
+    margin-bottom: 15px;
+  }
+  .form-inline {
+    label {
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+  }
+
+  .link-button {
+    color: $blue-main;
+    padding: 8px 5px;
+    box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+    font-size: 12px;
+    background-color: $grey-lighter;
+    border-radius: 5px;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      color: $blue-darker;
+      text-decoration: none;
+    }
+  }
+  .table {
+    th,
+    td {
+      border-color: $grey-lightest !important;
+    }
+  }
+  table tr th {
+    font-weight: 500;
+  }
+  .table-responsive {
+    position: relative;
+    flex: 1;
+  }
+  .table-responsive .table-custom thead.thead-light tr th {
+    background-color: $bg-color;
+    white-space: nowrap;
+    border: none;
+    padding: 10px 8px;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    opacity: 1;
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  .table-responsive {
+    .table-custom {
+      border: none;
+      font-size: 12px;
+      a {
+        color: $blue-darkest;
+      }
+      .action-icon {
+        border-color: transparent;
+        background-color: $white !important;
+        color: $blue-darkest !important;
+        line-height: 22px;
+        opacity: 1;
+        &:hover {
+          color: $blue-darkest !important;
+          opacity: 0.7 !important;
+        }
+        &.icon-delete {
+          color: $white;
+          background-color: $red;
+        }
+        &.icon-view {
+          color: $white;
+          background-color: $grey;
+        }
+      }
+      tr {
+        transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+      }
+      tr:hover {
+        background-color: $table-hover;
+        td {
+          &:first-child {
+            border-radius: 5px 0 0 5px;
+          }
+          &:last-child {
+            border-radius: 0 5px 5px 0;
+          }
+        }
+      }
+      tr:nth-child(even) {
+        background-color: $white;
+        &:hover {
+          background-color: $table-hover;
+        }
+      }
+      tr td {
+        padding: 8px;
+        border: none !important;
+        border-bottom: 1px solid $grey-lighter !important;
+        white-space: nowrap;
+      }
+    }
+  }
+  .app-table-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    .heading-table {
+      justify-content: flex-end;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      display: flex;
+    }
+  }
+  .normal-pagination {
+    // position: sticky;
+    // bottom: 0;
+    background-color: white;
+    padding-top: 15px;
+  }
+  .pagination-wrap {
+    font-size: 12px;
+  }
+  .pagination-wrap .pagination-options {
+    font-size: 12px;
+    margin-top: 0;
+  }
+  .pagination-wrap .page-item .page-link {
+    border-radius: 50%;
+    line-height: 23px;
+    padding: 0;
+    margin: 2px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    background-color: $grey-lighter;
+    color: $grey;
+    border-color: $grey-lighter;
+    fa-icon {
+      color: $text-main;
+    }
+  }
+  .pagination-wrap .page-item.active .page-link {
+    background-color: $blue-main;
+    color: $white;
+  }
+  .pagination-wrap .page-item.disabled .page-link {
+    fa-icon {
+      color: $grey;
+    }
+  }
+  .text-active {
+    background-color: $green;
+  }
+  .text-inactive {
+    background-color: $grey;
+  }
+  .text-blue {
+    color: $blue-main;
+  }
+  .color-green {
+    color: $green;
+  }
+  tag-input {
+    tag {
+      background-color: $grey-lighter !important;
+    }
+  }
+  .bg-primary {
+    background-color: $blue-main !important;
+  }
+  .custom-select {
+    color: $text-main;
+  }
+  .input-group {
+    .form-control:focus {
+      border-radius: 5px 0 0 5px;
+    }
+    .input-group-append {
+      padding-left: 0 !important;
+      .input-group-text {
+        border-color: $grey-lighter;
+        line-height: 13px;
+        height: 28px;
+        top: 1px;
+        fa-icon {
+          color: $blue-main;
+          font-size: 0.65rem;
+        }
+        box-shadow: none;
+      }
+    }
+  }
+  ngb-datepicker {
+    font-size: 0.75rem;
+    .ngb-dp-weekdays {
+      margin-bottom: 8px;
+    }
+  }
+  .ng2-tag-input__text-input {
+    height: 30px;
+    background-color: $bg-color;
+  }
+  .app-nothing-to-render {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: calc(100% - 8px);
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    padding: 100px;
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+    top: 0;
+    left: 8px;
+    &-image {
+      width: 200px;
+    }
+    &-des {
+      margin-top: 15px;
+      color: $text-main;
+      font-size: 0.75rem;
+      width: 200px;
+      text-align: center;
+    }
+  }
+  .card-header {
+    background: $sidebar;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid $lightestRGB;
+
+    .title-header {
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 0.9rem;
+
+      .inline-title {
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+
+    .title-right {
+      display: inline-block;
+      float: right;
+      cursor: pointer;
+    }
+
+    .title-header.inline-block {
+      display: inline-block;
+    }
+  }
+}
+
+.ng-scroll-content {
+  padding: 1px;
+}
+.ant-drawer .page,
+.modal-body.page,
+.ant-drawer .layout-wrapper {
+  position: relative;
+  height: inherit;
+}
+
+.modal {
+  .confirm-modal,
+  .large-modal,
+  .modal-style {
+    .modal-header {
+      background-color: $white;
+      border: none;
+      padding: 25px 40px !important;
+      .modal-title,
+      .second-title {
+        color: $text-main;
+        font-weight: bold;
+        text-align: left;
+        font-size: 1rem;
+      }
+    }
+    .modal-body {
+      padding: 0 40px 25px 40px !important;
+      color: $text-main;
+      font-size: 0.75rem;
+    }
+    label {
+      color: $text-main;
+      font-weight: 500;
+    }
+    .modal-footer {
+      justify-content: center;
+      border: none;
+    }
+  }
+}
+
+.toast-container .ngx-toastr {
+  background-color: $white;
+  color: $text-main !important;
+  font-size: 0.75rem;
+  padding: 15px 15px 15px 15px !important;
+  box-shadow: 0 0 4px $grey !important;
+  .toast-message {
+    white-space: pre-line !important;
+  }
+  &:hover {
+    box-shadow: 0 0 8px $grey !important;
+  }
+  .toast-close-button {
+    color: $text-main;
+    height: 15px;
+    font-weight: 100;
+  }
+  &.toast-success {
+    border-left: 5px solid $green-lighter;
+  }
+  &.toast-error {
+    border-left: 5px solid $red-main;
+  }
+}
+app-form-error-wrapper {
+  .error {
+    position: relative;
+  }
+  .help-block {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    font-size: 0.65rem;
+  }
+}
+.min-width-3 {
+  min-width: calc(100% / 3);
+}
+.min-width-4 {
+  min-width: calc(100% / 4);
+}
+.header-explain {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  margin-left: 15px;
+  font-weight: normal;
+}
+label.header-explain {
+  @extend .header-explain;
+  margin-left: 0;
+}
+
+.app-table-level-selection {
+  .app-table-level-container {
+    display: flex;
+    margin: 15px 0;
+    max-height: 400px;
+  }
+  .app-table-level-box {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    min-height: 300px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $border-color;
+    padding: 15px;
+    & + .app-table-level-box {
+      margin-left: 15px;
+    }
+  }
+  .app-table-level-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    & + .app-table-level-child {
+      margin-left: 15px;
+    }
+  }
+  .app-table-level-header {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    text-align: center;
+    background-color: $blue-darkest;
+    border: 1px solid $border-color;
+    border-bottom: none;
+    color: $white;
+    font-weight: 400;
+    padding: 15px;
+  }
+  .app-table-level-box-item {
+    align-items: center;
+    min-height: 40px;
+    display: flex;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    color: $text-main;
+    cursor: pointer;
+    justify-content: space-between;
+    border-radius: 5px;
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    &.active {
+      background-color: $bg-color;
+    }
+    &:hover,
+    &.item-active {
+      background-color: $green-lightest !important;
+    }
+    fa-icon {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background-color: $white;
+      margin-left: 8px;
+    }
+  }
+}
+.limit-height {
+  max-height: 250px;
+}
+
+.information-tab {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.tab-custom.mod-border {
+  .tab-content {
+    padding: 0 15px 0 0;
+  }
+  .nav-tabs {
+    position: relative;
+    z-index: 1;
+    .nav-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 8px;
+      &:first-child {
+        .nav-link {
+          margin-left: 10px;
+        }
+      }
+      .nav-link {
+        margin-left: 5px;
+        padding: 15px 8px 13px;
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 400;
+        color: $text-main;
+        opacity: 0.8;
+        &:hover {
+          font-weight: 400;
+        }
+        &.active {
+          font-weight: 500;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.ant-modal-content {
+  button.ant-modal-close {
+    &:focus,
+    &:hover {
+      outline: 0;
+    }
+  }
+}
+
+.mod-hide-antd-upload .ant-upload.ant-upload-select-picture-card {
+  display: none;
+}
+.app-breadcrumb-container {
+  font-size: 0.75rem;
+  border-radius: 5px;
+  padding: 10px;
+  color: #6598e6;
+  box-shadow: 0px 0px 4px rgba(82, 63, 105, 0.05);
+  background-color: #ffffff;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  display: block;
+  & > .breadcrumbs__item:first-child {
+    cursor: pointer;
+    color: $blue-main;
+    font-size: 0.85rem;
+  }
+}
+
+.breadcrumbs__container {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  .breadcrumbs__item:before {
+    content: "/";
+    margin-right: 10px;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, 0.65) !important;
+  }
+}
+
+.breadcrumbs__item,
+.breadcrumbs__item > a {
+  color: rgba(0, 0, 0, 0.65);
+  display: inline-block;
+  transition: color 0.3s;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue-main;
+  }
+}
+
+.breadcrumbs__item:last-child {
+  color: rgba(0, 0, 0, 0.45);
+  &:hover {
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  margin-right: 1px;
+  opacity: 0.75;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+
+.sale-order-content {
+  height: 100%;
+  margin-top: -65px;
+}
+
+.ngb-dp-navigation-select {
+  .custom-select {
+    color: #545454;
+  }
+}

@@ -1,0 +1,188 @@
+::ng-deep p.curve {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+::ng-deep .hc-luckywheel ul,
+.hc-luckywheel li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::ng-deep .hc-luckywheel {
+  position: relative;
+  // background: -webkit-linear-gradient(left top, #02163d 0%, #3765c4 100%);
+  background-image: url("../../../../assets/images/lucky/wheel.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 20px;
+  width: 500px; /*Change this when change size*/
+  height: 500px; /*Change this when change size*/
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  margin: auto;
+}
+
+::ng-deep .hc-luckywheel-container {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+  width: 92%;
+  height: 92%;
+  border-radius: inherit;
+  background-clip: padding-box;
+  background-color: #ffcb3f;
+  transition: transform 6s ease;
+}
+
+::ng-deep .hc-luckywheel-container canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+::ng-deep .hc-luckywheel-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 2;
+}
+
+::ng-deep .hc-luckywheel-item {
+  position: absolute;
+  left: 15px;
+  top: -15px;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+::ng-deep .hc-luckywheel-item:nth-child(odd) {
+  color: white;
+}
+
+::ng-deep .hc-luckywheel-item:nth-child(even) {
+  color: black;
+}
+
+::ng-deep .hc-luckywheel-item span {
+  position: relative;
+  display: block;
+  padding-top: 35px;
+  margin: 0 auto;
+  text-align: center;
+  transform-origin: 50% 250px;
+} /*Change this when change size*/
+
+::ng-deep .hc-luckywheel-item img {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+} /*Change this when change size*/
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg {
+  /*background-image: url('../assets/images/lucky/bg-large.png');*/
+  position: relative;
+  height: 100vh;
+}
+
+::ng-deep .hc-luckywheel-btn {
+  background-image: url("../../../../assets/images/lucky/inner-circle.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background: -webkit-linear-gradient(left top, #02163d 0%, #3765c4 100%);
+  font: 1.5em/0 sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  width: 20%;
+  height: 20%;
+  margin: -15%;
+  color: #f2d185;
+  font-size: 20px;
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+  border: none;
+  font-weight: 600;
+  z-index: 3;
+
+  &.disabled {
+    background: -webkit-linear-gradient(left top, #848d9e 0%, #bac3d5 100%);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.marker {
+  width: 12%;
+  position: absolute;
+  left: 47%;
+  top: -4%;
+  z-index: 3;
+  transform: rotate(50deg);
+}
+
+@media (max-width: 823px) {
+  ::ng-deep .hc-luckywheel {
+    width: 250px;
+    height: 250px;
+  }
+
+  ::ng-deep .hc-luckywheel-container {
+    left: 10px;
+    top: 10px;
+  }
+
+  ::ng-deep .hc-luckywheel-item {
+    left: 10px;
+    top: -50px;
+  }
+
+  ::ng-deep .hc-luckywheel-item span {
+    padding-top: 54px;
+    transform-origin: 50% 168px;
+  }
+
+  ::ng-deep p.curve {
+    font-size: 10px;
+    margin-bottom: 25px;
+  }
+
+  ::ng-deep .hc-luckywheel-item img {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .hc-luckywheel-btn {
+    font-size: 14px;
+  }
+}

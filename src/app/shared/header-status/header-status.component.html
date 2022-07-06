@@ -1,0 +1,8 @@
+<div class="app-status-tab">
+  <ul class="app-status-tab-list">
+    <li (click)="eventClickIntoStatus(item.status)" class="app-status-tab-item" [ngClass]="{'active': status === item.status}" *ngFor="let item of listMasterCountStatus; let i = index;">
+      <span class="app-status-tab-item-count"> {{ item.count || 0 }}</span>
+      <span class="app-status-tab-item-title"> {{ item.name  |translate}}</span>
+    </li>
+  </ul>
+</div>

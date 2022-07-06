@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": ["googlemaps"]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "files": ["main.ts", "polyfills.ts"],
+  "include": ["src/**/*.d.ts"]
+}

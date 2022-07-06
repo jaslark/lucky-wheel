@@ -1,0 +1,56 @@
+<!-- <div class="banner row">
+
+  <div class="people col-md-5">
+    <img src="../../../../../../assets/images/lucky/person.png" alt="">
+  </div>
+  <div class="product-wheel col-md-5 offset-md-2">
+    <img src="../../../../../../assets/images/lucky/vongquay.png" alt="">
+    <img src="../../../../../../assets/images/lucky/product.png" alt="">
+  </div>
+</div> -->
+  <div class="text-center wrapper">  
+  <nz-tabset nzCentered>
+    <nz-tab nzTitle="Đăng ký quay số">
+      <div class="form-container">
+        <form nz-form [formGroup]="generalForm" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-label
+              [nzSm]="24"
+              [nzXs]="24"
+              nzFor="full_name"
+            >
+              <span>Họ và tên </span>
+            </nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="Nhập họ và tên">
+              <input nz-input id="full_name" formControlName="full_name" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label
+              [nzSm]="24"
+              [nzXs]="24"
+              nzFor="identity"
+            >
+              <span>Số CCCD/CMND </span>
+            </nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="Nhập số CMND">
+              <input nz-input id="identity" formControlName="identity" />
+            </nz-form-control>
+          </nz-form-item>
+        
+        
+          <nz-form-item nz-row class="register-area">
+              <button nz-button nzType="primary" class="register-btn">Đăng ký</button>
+          </nz-form-item>
+        </form>
+      </div>      
+ 
+    </nz-tab>
+    <nz-tab nzTitle="Thể lệ và trả thưởng">
+        <div class="rule">
+          ádfasd
+        </div>
+    </nz-tab>
+  </nz-tabset> 
+</div>
+

@@ -1,0 +1,17 @@
+<div class="error" [ngClass]="{ 'has-error': hasError() }">
+  <ng-content></ng-content>
+  <ng-container *ngFor="let errorKey of errorKeys">
+    <span
+      class="text-danger help-block"
+      *ngIf="control.hasError(errorKey) && control.touched"
+    >
+    <ng-container *ngIf="noTranslate">{{ (formateError((errorObject[errorKey]), control.errors[errorKey])) }}</ng-container>
+    <ng-container *ngIf="!noTranslate">{{ (formateError((errorObject[errorKey]|translate), control.errors[errorKey])) |translate }}</ng-container>
+      
+    </span>
+  </ng-container>
+  <span class="text-danger help-block" *ngIf="apiErrorMessage">
+    <ng-container *ngIf="noTranslate"> {{ apiErrorMessage }}</ng-container>
+    <ng-container *ngIf="!noTranslate"> {{ apiErrorMessage  | translate}}</ng-container>
+  </span>
+</div>

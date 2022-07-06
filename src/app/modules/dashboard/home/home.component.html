@@ -1,0 +1,35 @@
+<div class="bg step-1" *ngIf="currentStep == WHEEL.STEP_1">
+  <app-register-identity (currentStep)="getFormRegisterIdentity($event)"></app-register-identity>
+</div>
+
+<div class="bg step-2" *ngIf="currentStep == WHEEL.STEP_2">
+  <!-- OTP -->
+</div>
+
+<div class="bg step-3" [style.display]="currentStep === WHEEL.STEP_3 ? 'block' : 'none'">
+    <div class="wrapper typo" id="wrapper">
+      <br>
+        <section id="luckywheel" class="hc-luckywheel">
+            <img class="marker" src="./assets/images/lucky/marker2.png">
+  
+          <div class="hc-luckywheel-container">
+            <canvas class="hc-luckywheel-canvas" width="500px" height="500px"></canvas>
+          </div>
+          <button id="spin" class="hc-luckywheel-btn" (click)="spin()" [disabled]="disabled" [class.disabled]="disabled">
+            QUAY
+      </button>
+        </section>
+      </div>
+</div>
+
+<div class="bg step-2" *ngIf="currentStep === WHEEL.STEP_4">
+  <!-- Form upload image -->
+</div>
+
+
+
+
+
+<audio src="./assets/sound/game music.mp3" id="bgm" loop="loop"></audio>
+<audio src="./assets/sound/lose.mp3" id="lose"></audio>
+<audio src="./assets/sound/success.mp3" id="success"></audio>

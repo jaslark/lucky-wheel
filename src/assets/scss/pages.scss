@@ -1,0 +1,363 @@
+@import "variable";
+@import "colors";
+/*==============================================================
+ For all pages
+ ============================================================== */
+
+#main-wrapper {
+  width: 100%;
+  .page-wrapper {
+    .container-fluid {
+      background: $bglayout;
+    }
+  }
+}
+
+.container-fluid {
+  background: $white;
+}
+
+ol > li,
+ul > li {
+  list-style: none;
+}
+
+.help-block {
+  position: absolute;
+  left: 16px;
+  font-size: 0.65rem;
+}
+
+.page {
+  display: block;
+  padding-bottom: 15px;
+  // display: -webkit-flex; /* Safari */
+  &.form-create {
+    font-size: 12px;
+    font-weight: 400;
+    label.control-label {
+      text-align: left;
+      font-weight: 400;
+      padding-top: 6px;
+    }
+  }
+
+  .content {
+    width: 100%;
+    position: relative;
+    padding: 0px 15px;
+  }
+
+  #search-form-admin-panel {
+    display: block;
+    margin-bottom: 0px;
+    padding: 10px 3px 3px 3px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: $black;
+    &.search-box {
+      .form-inline {
+        .form-group {
+          width: 200px;
+        }
+        label {
+          width: 100%;
+          text-align: left;
+          justify-content: left;
+          font-weight: 500;
+        }
+        select {
+          width: 100%;
+        }
+        .button-search-group {
+          margin-left: 15px;
+
+          .block-search {
+            button:first-child {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #search-form-admin-panel-more {
+    @extend #search-form-admin-panel;
+    &.search-box {
+      .form-inline {
+        .form-group {
+          width: 165px;
+        }
+      }
+    }
+  }
+
+  h6.title {
+    border-bottom: 1px solid $gray-999;
+    text-transform: uppercase;
+  }
+}
+.page-has-tab {
+  border: 0;
+  background: transparent;
+  .content {
+    padding-top: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 0;
+    border-radius: 0 0.25rem 0.25rem 0.25rem;
+    background: $white;
+  }
+}
+
+.page .title {
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.page-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: $white;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $gray-999;
+  border-top: 1px solid $gray-999;
+  margin: 0 -15px 15px;
+  background-color: $themecolor-dark;
+}
+
+.list-action {
+  text-align: center;
+
+  button {
+    margin-right: 5px;
+  }
+
+  button:last-child {
+    margin-right: 0;
+  }
+
+  &.view-screen {
+    text-align: right;
+    margin-bottom: 15px;
+
+    a {
+      margin-right: 8px;
+    }
+
+    button.btn {
+      margin-left: 8px;
+    }
+  }
+}
+
+.list-action-top {
+  text-align: right;
+  margin: 15px 15px 0 0;
+}
+
+label.input-check {
+  margin-left: 5px;
+  color: $black;
+}
+
+strong {
+  color: $black;
+}
+
+label.check-all {
+  font-size: 12px;
+
+  strong {
+    margin-left: 5px;
+    color: $black;
+  }
+}
+
+.tab-custom {
+  .nav-tabs {
+    border: none;
+    margin-bottom: 10px;
+
+    .nav-item {
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+
+      .nav-link {
+        border: none;
+        color: $bodytext;
+        display: block;
+        padding: 0.3rem 0.8rem;
+
+        &.active {
+          border-bottom: 3px solid $main-blue;
+          color: $main-blue;
+        }
+      }
+    }
+  }
+}
+
+.block-role {
+  border: 1px solid #d1d1d1;
+  background-color: #f7f7f7;
+  padding: 20px 20px 5px;
+  margin-top: 20px;
+  position: relative;
+
+  .group-per {
+    position: absolute;
+    background-color: #fff;
+    left: 15px;
+    top: -9px;
+    height: 22px;
+  }
+}
+
+.upload {
+  width: 150px;
+  text-align: center;
+
+  .img-logo {
+    margin-bottom: 15px;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+.upload.in-table {
+  width: 80px;
+  text-align: center;
+}
+
+.action-site {
+  margin-left: 15px;
+  display: flex;
+}
+
+.page-top-action {
+  margin-bottom: 10px;
+  a {
+    margin-left: 5px;
+    color: $dark-text;
+  }
+}
+
+.product-category {
+  // padding: 5px 5px 5px 10px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  max-height: 100% !important;
+
+  .title-header {
+    color: #656565;
+  }
+
+  ul.category-list {
+    padding-left: 0;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .folder-icon {
+    color: $warning;
+  }
+
+  .card {
+    padding: 5px 5px 5px 10px;
+
+    .block-header {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.2;
+      display: inline;
+      display: inline-block;
+      padding-top: 3px;
+    }
+
+    .block-right {
+      display: inline;
+      float: right;
+
+      .btn {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+// Override Drawer
+.ant-drawer-content {
+  .ant-drawer-header {
+    padding: 10px 18px;
+    border-radius: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $themecolor-dark;
+    .ant-drawer-title {
+      text-transform: uppercase;
+      color: $white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    button.ant-drawer-close {
+      color: $white;
+      height: 36px;
+      line-height: 14px;
+      padding: 15px 20px 20px 20px;
+      font-weight: 600;
+      padding: 5px;
+      &:focus {
+        background: transparent;
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+// End Drawer
+
+.box-area {
+  padding: 15px 0;
+  border: 1px solid #ddd;
+}
+.layout-wrapper .card .card-body .input-group-text,
+.layout-wrapper .card .card-body .input-group-append {
+  color: $black;
+  min-width: unset;
+  padding-left: unset !important;
+  padding-right: unset !important;
+  width: 27px;
+  display: inline-block;
+  text-align: center;
+}
+
+[nz-carousel-content] {
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
+
+.lang-vi {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}

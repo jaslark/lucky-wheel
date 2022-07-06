@@ -1,0 +1,201 @@
+// Table
+.table-responsive {
+  .heading-table {
+    display: block;
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    padding: 0;
+    .table-title {
+      font-size: 13px;
+      display: inline-block;
+      width: 40%;
+      text-align: left;
+      color: $white;
+      font-weight: 600;
+    }
+    .action {
+      display: inline-block;
+      width: 60%;
+      text-align: right;
+      margin-bottom: 5px;
+    }
+  }
+  .table-custom {
+    font-size: 13px;
+    border: 1px solid $gray-100;
+    border-radius: 3px;
+    tr th,
+    tr td {
+      padding: 0.3rem;
+    }
+    tr td {
+      border: 1px solid $gray-100;
+    }
+    // tr :last-child {
+    //   border-radius: 0 0 3px 3px;
+    // }
+    thead.thead-light tr th {
+      border: 1px solid $gray-100;
+      text-align: center;
+      align-items: center;
+      vertical-align: middle;
+    }
+    tbody {
+      tr td:first-child {
+        border-left: 1px solid $gray-100;
+      }
+      tr td:last-child {
+        border-right: 1px solid $gray-100;
+      }
+    }
+  }
+}
+// Pagination
+.row.normal-pagination {
+  margin-left: 0;
+  margin-right: 0;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: $main-blue;
+  border-color: $main-blue;
+  background-color: $white;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  color: inherit;
+  background-color: $white;
+  line-height: 15px;
+  padding: 5px 8px;
+  margin: 2px;
+}
+
+.page-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+table.table tr td.table-action {
+  color: $gray-999;
+  text-align: left;
+
+  a {
+    margin-right: 5px;
+    color: $gray-999;
+    text-align: center;
+
+    &:hover {
+      color: $info-dark;
+    }
+  }
+}
+.pagination-wrap {
+  display: flex;
+  justify-content: flex-end;
+  .pagination-options {
+    margin-right: 40px;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .page-item .page-link {
+    border-radius: 50%;
+    line-height: 25px;
+    padding: 0;
+    margin: 2px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+  }
+}
+.table-custom {
+  .table-responsive & {
+    thead {
+      th {
+        background: $gray-700;
+        text-align: center;
+        color: $black;
+        opacity: 0.8;
+      }
+    }
+    tr {
+      transition: backgound-color 0.5s ease;
+      &:nth-child(even) {
+        background: rgba(237, 237, 237, 0.4);
+      }
+      &:hover {
+        background-color: rgba(0, 123, 252, 0.1);
+        cursor: pointer;
+      }
+      td {
+        text-align: center;
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      td.desc {
+        text-align: left;
+      }
+    }
+    // Action icon
+    tr td.table-action {
+      .page & {
+        text-align: center;
+      }
+    }
+    .action-icon {
+      // padding: 2px;
+      opacity: 0.7;
+      transition: opacity 0.5s ease;
+      border: 1px solid $gray-999;
+      width: 22px;
+      height: 22px;
+      border-radius: 2px;
+      display: inline-block;
+      align-content: center;
+      &:hover {
+        opacity: 1;
+        &.icon {
+          &-edit {
+            color: $main-blue;
+          }
+          &-view {
+            color: $dark;
+          }
+          &-delete {
+            color: $danger-dark;
+          }
+          &-active {
+            color: $success-dark;
+          }
+          &-deactive {
+            color: $muted;
+          }
+        }
+      }
+      &.icon {
+        &-edit {
+          color: $main-blue;
+        }
+        &-view {
+          color: $dark;
+        }
+        &-delete {
+          color: $danger-dark;
+        }
+        &-active {
+          color: $success-dark;
+        }
+        &-deactive {
+          color: $muted;
+        }
+      }
+    }
+    //End Action icon
+  }
+}
+// End Table
+.table-item {
+  td {
+    padding: 0.35rem !important;
+  }
+}

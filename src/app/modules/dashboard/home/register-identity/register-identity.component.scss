@@ -1,0 +1,100 @@
+.title {
+  margin-bottom: 2rem;
+}
+
+.register-area {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 108%;
+  transform: translate(-50%, -50%);
+  max-width: 1216px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 15px 15px -10px #000000e6;
+  border-radius: 10px;
+  padding: 66px 50px;
+  opacity: 0.92;
+  min-height: 400px;
+}
+
+.people {
+  height: 56%;
+  position: absolute;
+  top: 0;
+  margin-top: 18%;
+  margin-left: 13%;
+}
+
+.form-container {
+  width: 43%;
+  text-align: center;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+::ng-deep .ant-form-item-label > label {
+  height: 10px;
+}
+
+.ant-form-item-label {
+  text-align: left;
+}
+
+::ng-deep .ant-tabs-nav .ant-tabs-tab {
+  color: #41434d;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 70px 0 0;
+}
+
+::ng-deep .ant-tabs-nav .ant-tabs-tab-active {
+  color: #003da5;
+}
+
+::ng-deep .ant-tabs-ink-bar {
+  background-color: #003da5;
+}
+
+.ant-input {
+  border-radius: 5px;
+  height: 46px;
+}
+
+.register-btn {
+  height: 60px;
+  background: #003da5;
+  border-radius: 38px;
+  color: white;
+  padding: 16px 48px;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 325px;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .wrapper {
+    max-width: 575px;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}

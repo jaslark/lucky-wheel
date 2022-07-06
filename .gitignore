@@ -1,0 +1,9 @@
+node_modules
+dist/
+dist-temp/
+documentation/
+package-lock.json
+yarn.lock
+yarn-error.log
+extract.pot
+src/environments/environment.local.ts

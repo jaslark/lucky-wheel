@@ -1,0 +1,221 @@
+@import "../../../assets//scss//colors.scss";
+
+.loading-container {
+  background-color: $white;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  position: relative;
+  width: 350px;
+  opacity: 1;
+  margin-top: 15px;
+
+  .loading-bar {
+    width: 100%;
+    height: 30px;
+    background: $grey-lighter;
+    border-radius: 5px;
+
+    .progress-bar {
+      animation: progress 10s forwards;
+      width: 0%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: $blue-main;
+      @keyframes progress {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 25%;
+        }
+        75% {
+          width: 75%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .status {
+    margin-top: 10px;
+
+    .state {
+      float: left;
+      font-size: 0.9em;
+      letter-spacing: 1pt;
+      text-transform: uppercase;
+      width: 100px;
+      height: 20px;
+      position: relative;
+
+      &:before {
+        content: "Loading up your account";
+        position: absolute;
+        width: 300px;
+        left: 0;
+        top: 0;
+        animation: fadeLeft 0.5s forwards ease;
+        animation-delay: 10s;
+
+        @keyframes fadeLeft {
+          0% {
+            text-indent: 0;
+            opacity: 1;
+          }
+          100% {
+            text-indent: -100px;
+            opacity: 0;
+          }
+        }
+      }
+      &:after {
+        content: "Complete";
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-indent: 100px;
+        opacity: 0;
+        animation: fadeLeft2 0.5s forwards ease;
+        animation-delay: 10s;
+
+        @keyframes fadeLeft2 {
+          0% {
+            text-indent: 100px;
+            opacity: 0;
+          }
+          100% {
+            text-indent: 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .percentage {
+      float: right;
+
+      &:before {
+        animation: percentage-slow 4s forwards, percentage-fast 6s forwards;
+        animation-delay: 0s, 4s;
+        content: "10%";
+        font-size: 0.9em;
+        letter-spacing: 1pt;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes percentage-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  0% {
+    content: "6%";
+  }
+  25% {
+    content: "7%";
+  }
+  50% {
+    content: "8%";
+  }
+  75% {
+    content: "9%";
+  }
+  100% {
+    content: "10%";
+  }
+}
+@-webkit-keyframes percentage-fast {
+  @for $i from 11 through 100 {
+    #{$i * 1%} {
+      content: $i + "%";
+    }
+  }
+}
+
+@-moz-keyframes percentage-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  0% {
+    content: "6%";
+  }
+  25% {
+    content: "7%";
+  }
+  50% {
+    content: "8%";
+  }
+  75% {
+    content: "9%";
+  }
+  100% {
+    content: "10%";
+  }
+}
+
+@-moz-keyframes percentage-fast {
+  @for $i from 11 through 100 {
+    #{$i * 1%} {
+      content: $i + "%";
+    }
+  }
+}
+
+@-o-keyframes percentage-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  0% {
+    content: "6%";
+  }
+  25% {
+    content: "7%";
+  }
+  50% {
+    content: "8%";
+  }
+  75% {
+    content: "9%";
+  }
+  100% {
+    content: "10%";
+  }
+}
+@-o-keyframes percentage-fast {
+  @for $i from 11 through 100 {
+    #{$i * 1%} {
+      content: $i + "%";
+    }
+  }
+}
+
+@-ms-keyframes percentage-slow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes percentage-fast {
+  0%,
+  100% {
+    opacity: 0;
+  }
+}

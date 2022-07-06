@@ -1,0 +1,71 @@
+.layout-wrapper {
+  .card {
+    -webkit-box-shadow: 1px 1px 2px 1px $lightestRGB;
+    -moz-box-shadow: 1px 1px 2px 1px $lightestRGB;
+    box-shadow: 1px 1px 2px 1px $lightestRGB;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 13px;
+    height: 100%;
+
+    .card-header {
+      background: $sidebar;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid $lightestRGB;
+
+      .title-header {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 0.9rem;
+
+        .inline-title {
+          font-weight: 400;
+          font-size: 12px;
+        }
+      }
+
+      .title-right {
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+      }
+
+      .title-header.inline-block {
+        display: inline-block;
+      }
+    }
+
+    .card-body {
+      padding: 1rem;
+      font-size: 0.75rem;
+
+      .form-control-plaintext,
+      .form-control {
+        font-size: 0.75rem;
+      }
+
+      .input-group-text,
+      .input-group-append {
+        background: $sidebar;
+        height: 28px;
+        padding-left: 6px;
+        padding-right: 6px;
+        font-size: 0.75rem;
+      }
+      label.col-form-label {
+        padding-right: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.layout-wrapper.page {
+  .content.card {
+    .card-header {
+      padding: 0.5rem 0;
+    }
+    .card-body {
+      padding: 1rem 0;
+    }
+  }
+}

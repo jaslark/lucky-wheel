@@ -1,0 +1,55 @@
+@import "../../../assets/scss/variable.scss";
+.test-container {
+  border-bottom: 2px solid $warning;
+  text-align: left;
+  position: relative;
+  // width: calc(100% - 50px); // padding 25 + 25 on .container-fluid = 50
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  margin: 10px 0px;
+  background: $heading-blue;
+  padding: 0 15px;
+  h5 {
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    color: $white;
+    font-size: 16px;
+    padding: 3px 0;
+    line-height: 1.4;
+  }
+  span {
+    background: $warning;
+    padding: 0px 10px;
+    font-size: 12px;
+    color: $white;
+    margin: 0 0 0;
+    display: inline-block;
+    position: relative;
+    bottom: -4px;
+    border-radius: 7px 7px 0 0;
+    font-weight: 500;
+  }
+  span:before {
+    position: absolute;
+    content: "";
+    border-bottom: 0 solid transparent;
+    border-top: 17px solid transparent;
+    border-right: 18px solid $warning;
+    top: -1px;
+    left: -14px;
+    border-radius: 0 6px 0 0;
+    z-index: 2222;
+  }
+  span:after {
+    position: absolute;
+    content: "";
+    border-radius: 4px 0 0 0;
+    border-bottom: 0 solid transparent;
+    border-top: 17px solid transparent;
+    border-left: 18px solid $warning;
+    top: -1px;
+    right: -14px;
+    border-radius: 10px 14px 0 0;
+  }
+}

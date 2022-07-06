@@ -1,0 +1,239 @@
+#topSalesBySalespersonChart {
+  height: 400px !important;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+#topCustomersChart {
+  height: 400px !important;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+#topProductsBySalesChart {
+  height: 400px !important;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+#topProductsCategoriesBySalesChart {
+  height: 400px !important;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+#arAgingChart {
+  height: 400px !important;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+#arAgingLegend {
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.7rem;
+
+  table {
+    background: #f5f1f1;
+
+    tr {
+      border-bottom: 2px solid white;
+    }
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #arAgingLegend {
+    margin-top: 15px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #arAgingLegend {
+    margin-top: 25%;
+  }
+}
+
+#chartDemo {
+  height: 400px !important;
+}
+
+.dashboard-report {
+  .text-red {
+    color: #dc3545;
+  }
+
+  .text-blue-info {
+    color: #0b086b;
+  }
+
+  .dashboard-block-char {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 0;
+    margin-right: -10px;
+
+    > div > div > div {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .block-line-report {
+    border: 1px solid #dee2e6;
+    margin-right: 10px;
+    height: 100%;
+
+    .header-top-line-report {
+      background: #008080;
+      color: white;
+      text-align: center;
+      margin-left: -1px;
+      margin-right: -1px;
+
+      h5 {
+        padding: 3px;
+        font-size: 0.75rem;
+        color: white;
+      }
+    }
+
+    .main-block-line-report {
+      padding: 5px;
+
+      .top-line-report {
+        .number-summary-top-line-report {
+          padding-left: 5px;
+
+          div:first-of-type {
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          div:last-of-type {
+            margin-top: -3px;
+            font-size: 11px;
+          }
+        }
+
+        .detail-top-line-report {
+          margin-top: 10px;
+          text-align: center;
+
+          i {
+            // padding-right: 3px;
+          }
+
+          div {
+            padding: 0;
+            font-weight: 600;
+
+            div:first-of-type {
+              font-size: 12px;
+            }
+
+            div:last-of-type {
+              margin-top: -3px;
+              font-size: 10px;
+              padding-left: 15px;
+            }
+          }
+        }
+
+        .line-report {
+          height: 100px;
+          width: 100%;
+        }
+      }
+
+      .bottom-line-report {
+        .number-summary-bottom-line-report {
+          padding-left: 5px;
+
+          div:first-of-type {
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          div:last-of-type {
+            margin-top: -3px;
+            font-size: 11px;
+          }
+        }
+
+        .detail-bottom-line-report {
+          margin-top: 5px;
+          text-align: right;
+
+          div {
+            padding-right: 10px;
+            font-weight: 600;
+
+            div:first-of-type {
+              font-size: 12px;
+            }
+
+            div:last-of-type {
+              margin-top: -3px;
+              font-size: 10px;
+              // padding-left: 20px;
+            }
+          }
+        }
+
+        .line-report {
+          height: 150px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .form-dashboard {
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    position: relative;
+
+    > div {
+      border: 1px solid rgb(207, 207, 207);
+      height: 100%;
+
+      div:nth-child(1) {
+        margin: 0;
+
+        h4 {
+          padding: 10px 0 0 10px;
+          float: left;
+          font-size: 0.75rem;
+        }
+
+        > a {
+          margin-top: 10px;
+          text-decoration: underline;
+          position: absolute;
+          right: 20px;
+        }
+      }
+
+      div:nth-child(2) {
+        margin: 0;
+      }
+
+      div:nth-child(3) {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.format-loading-block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  border: 0 !important;
+}
+
+.custom-opacity {
+  opacity: 0.5;
+}

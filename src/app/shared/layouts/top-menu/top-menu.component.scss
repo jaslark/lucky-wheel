@@ -1,0 +1,39 @@
+.wrapper-menu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.right-menu {
+  display: flex;
+}
+
+.search {
+  margin-right: 20px;
+  color: white;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100px;
+  margin-left: 5px;
+
+  &::placeholder {
+    color: white;
+    opacity: 1;
+  }
+}
+
+ul.icon-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    float: left;
+    margin-right: 15px;
+  }
+}
